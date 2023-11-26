@@ -69,9 +69,5 @@ Este repositório contém materiais relacionados à disciplina de Linguagem e De
 
 ## Contribuições
 <div>
-  <strong>Sinta-se à vontade para explorar os materiais e colaborar neste repositório. Boa jornada de aprendizado em Linguagem de Programação Orientada a Objetos em C++.<strong>
-<div>
-
-<div>
   <strong>Contribuições são bem-vindas! Se você identificar problemas, sugerir melhorias ou quiser adicionar recursos adicionais, sinta-se à vontade para enviar pull requests.<strong>
 <div>
