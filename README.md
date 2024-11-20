@@ -1,20 +1,20 @@
-# Linguagens de Descrição de Hardware I - VHDL  
+# Linguagens de Descrição de Hardware I - VERILOG
 **Professor:** Rodrigo Pereira  
 
 ## 📚 Ementa  
-Este repositório contém materiais, exercícios e exemplos práticos relacionados à disciplina de **Linguagens de Descrição de Hardware I**, com foco na linguagem **VHDL** e no desenvolvimento de sistemas embarcados utilizando FPGAs.  
+Este repositório contém materiais, exercícios e exemplos práticos relacionados à disciplina de **Linguagens de Descrição de Hardware I**, com foco na linguagem **Verilog** e no desenvolvimento de sistemas embarcados utilizando FPGAs.  
 
 ### Conteúdo abordado:  
-1. **Histórico e Aspectos Gerais da Linguagem VHDL**  
+1. **Histórico e Aspectos Gerais da Linguagem Verilog**  
    - Introdução ao VHDL e seu histórico de evolução.  
 2. **Estruturas Básicas da Linguagem**  
-   - Tipos de dados, operadores e controle de fluxo em VHDL.  
+   - Tipos de dados, operadores e controle de fluxo em Verilog.  
 3. **Componentes e Esquemas de Iteração**  
-   - Definição de componentes e formas de iterar e organizar código em VHDL.  
+   - Definição de componentes e formas de iterar e organizar código em Verilog.  
 4. **Subprogramas e Funções**  
    - Como utilizar subprogramas e funções no desenvolvimento de hardware.  
 5. **Bibliotecas, Pacotes e Configurações**  
-   - Organização e reutilização de código em VHDL.  
+   - Organização e reutilização de código em Verilog.  
 6. **Síntese de Circuitos Lógicos Combinacionais**  
    - Conversão de algoritmos em circuitos lógicos combinacionais.  
 7. **Síntese de Circuitos Lógicos Sequenciais**  
@@ -46,14 +46,7 @@ Este repositório contém materiais, exercícios e exemplos práticos relacionad
 ## 🛠️ Ferramentas Recomendadas  
 - **IDE:** ModelSim, Vivado, Quartus.  
 - **Simulador de FPGA:** Altera Quartus.  
-- **Compilador VHDL:** GHDL (para simulação VHDL).  
-
-## 🌟 Como Contribuir  
-1. Faça um fork deste repositório.  
-2. Crie uma branch para sua contribuição (`git checkout -b feature/nova-feature`).  
-3. Realize suas alterações e commit (`git commit -m "Descrição das alterações"`).  
-4. Envie sua branch (`git push origin feature/nova-feature`).  
-5. Abra um Pull Request.  
+- **Compilador Verilog:** Icarus.
 
 ## 📫 Contato  
 Dúvidas? Entre em comigo por e-mail:  
