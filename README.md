@@ -44,9 +44,8 @@ Este repositório contém materiais, exercícios e exemplos práticos relacionad
 - **/Simulações**: Scripts e ferramentas para simulação de circuitos descritos em VHDL.  
 
 ## 🛠️ Ferramentas Recomendadas  
-- **IDE:** ModelSim, Vivado, Quartus.  
+- **IDE:** ModelSim, Quartus.  
 - **Simulador de FPGA:** Altera Quartus.  
-- **Compilador Verilog:** Icarus.
 
 ## 📫 Contato  
 Dúvidas? Entre em comigo por e-mail:  
