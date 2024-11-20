@@ -1,0 +1,15 @@
+C:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/src/cronometro.v {1 {vlog -work work C:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/src/cronometro.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module cronometro
+
+Top level modules:
+	cronometro
+
+} {} {}} C:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/src/sevenseg.v {1 {vlog -work work C:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/src/sevenseg.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module sevenseg
+
+Top level modules:
+	sevenseg
+
+} {} {}}

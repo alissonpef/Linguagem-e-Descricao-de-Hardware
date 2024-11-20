@@ -1,0 +1,5 @@
+
+State Machine - |cronometro|cont2
+Name cont2.0001001110001000 
+cont2.0000000000000000 0 
+cont2.0001001110001000 1 

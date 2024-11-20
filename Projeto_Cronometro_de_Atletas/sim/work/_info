@@ -1,0 +1,62 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.1
+vcronometro
+Z1 !s100 k<I6:QlYfLRTdCP5BzNSG0
+Z2 I>@d_Ti@j^KQS@n7iX^ilY2
+Z3 VH<793@^Kh_>GBkDMMLI0:0
+Z4 dC:\Users\aliss\OneDrive\Documentos\HDL\Trabalho_Final\sim
+Z5 w1701206166
+Z6 8C:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/src/cronometro.v
+Z7 FC:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/src/cronometro.v
+L0 1
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -reportprogress|300|-work|work|C:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/src/cronometro.v|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1701208696.743000
+Z12 !s107 C:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/src/cronometro.v|
+!s101 -O0
+vsevenseg
+!i10b 1
+Z13 !s100 PfgkZ<17M`BbA>A7N6foU3
+Z14 ImlF`D?UQNS>>BLX=3Jd3P0
+Z15 VJ2kzm5QFjG^Hf5Uc7THlA0
+R4
+Z16 w1701206168
+Z17 8C:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/src/sevenseg.v
+Z18 FC:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/src/sevenseg.v
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1701208696.812000
+!s107 C:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/src/sevenseg.v|
+Z19 !s90 -reportprogress|300|-work|work|C:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/src/sevenseg.v|
+!s101 -O0
+R10
+vtb_cronometro
+Z20 !s100 43KB=A8ZXN1CH7_XB@MYm3
+Z21 IX`moVIllZUXl`D4IDYI<B2
+Z22 V79P@95ek?glcR;IU:K]bH3
+R4
+Z23 w1701208526
+Z24 8C:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/sim/cronometro_tb.v
+Z25 FC:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/sim/cronometro_tb.v
+L0 3
+R8
+r1
+31
+Z26 !s90 -reportprogress|300|-work|work|C:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/sim/cronometro_tb.v|
+R10
+Z27 !s108 1701208696.671000
+Z28 !s107 C:/Users/aliss/OneDrive/Documentos/HDL/Trabalho_Final/sim/cronometro_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0

@@ -1,0 +1,129 @@
+/*
+ * Módulo: cronometro
+ * Descrição: Este módulo implementa um cronometro de tempo com seis displays de sete segmentos,
+ *            contando de 0 a 999999. Cada display exibe um dígito do cronometro.
+ * Parâmetros de Entrada:
+ *   - clkin: Sinal de clock de entrada.
+ *   - reset: Sinal de reset. Quando ativo (reset == 1'b0), reinicia o cronometro e os displays.
+ *   - hold: Sinal de hold. Quando ativo (hold == 1'b1), o cronometro é incrementado, e os displays
+ *           exibem os valores correspondentes.
+ * Parâmetros de Saída:
+ *   - disp1, disp2, disp3, disp4, disp5, disp6: Saídas de 7 bits representando os valores a serem
+ *                                              exibidos nos seis displays de sete segmentos.
+ * Variáveis Internas:
+ *   - cronometro: Registrador de 26 bits que armazena o valor do cronometro.
+ *   - us, ds, um, dm, uh, dh: Registradores de 4 bits que representam os dígitos individuais
+ *                            para unidades de segundo, dezenas de segundo, unidades de minuto,
+ *                            dezenas de minuto, unidades de hora e dezenas de hora, respectivamente.
+ * Comportamento:
+ *   - O bloco always @(posedge clkin) é acionado na borda de subida do sinal de clock.
+ *   - Se o sinal de reset estiver ativo, todos os dígitos e o cronometro são reiniciados para 1.
+ *   - Se o sinal de hold estiver ativo, o cronometro é incrementado.
+ *   - Quando o cronometro atinge 100000, o dígito das unidades de segundo é incrementado.
+ *   - A lógica de contagem é implementada para os dígitos de segundo, minuto e hora.
+ *   - Os valores dos dígitos são atualizados de acordo com a contagem e os limites específicos.
+ *   - Os valores dos dígitos são utilizados como entrada para seis instâncias do módulo 'sevenseg',
+ *     que converte os dígitos em segmentos para serem exibidos nos displays.
+ */
+
+ module cronometro (
+    input clkin,            // Sinal de clock de entrada
+    input reset,            // Sinal de reset
+    input hold,             // Sinal de hold para controlar a contagem
+    output [6:0] disp1,     // Saída para o display 1 (menos significativo)
+    output [6:0] disp2,     // Saída para o display 2
+    output [6:0] disp3,     // Saída para o display 3
+    output [6:0] disp4,     // Saída para o display 4
+    output [6:0] disp5,     // Saída para o display 5
+    output [6:0] disp6      // Saída para o display 6 (mais significativo)
+);
+
+// Registradores para o cronometro e dígitos individuais
+reg [0:25] cronometro;    // Registrador de 26 bits para armazenar o valor do cronometro
+reg [3:0] us, ds, um, dm, uh, dh;    // Registradores de 4 bits para os dígitos de segundo, minuto e hora
+
+// Bloco always acionado na borda de subida do sinal de clock
+always @(posedge clkin)
+begin
+    if (reset == 1'b0) begin
+        // Reinicializa todos os dígitos quando o sinal de reset está ativo
+        us = 4'd1;
+        ds = 4'd1;
+        um = 4'd1;
+        dm = 4'd1;
+        uh = 4'd1; 
+        dh = 4'd1;
+    end
+    if (hold == 1'b1) begin  
+        // Incrementa o cronometro quando o sinal de hold está ativo
+        if (cronometro == 26'd100_000) begin
+            cronometro = 25'd0;
+            us = us + 4'd1;
+        end
+        else begin
+            cronometro = cronometro + 25'd1;
+        end
+
+        // Lógica de contagem para os dígitos de segundo, minuto e hora
+        if (us > 4'd9) begin
+            us = 4'd0;
+            ds = ds + 4'd1;
+            if (ds > 4'd5) begin
+                ds = 4'd0;
+                um = um + 4'd1;
+                if (um > 4'd9) begin 
+                    um = 4'd0;
+                    dm = dm + 4'd1;
+                    if (dm > 4'd5) begin
+                        dm = 4'd0;
+                        uh = uh + 4'd1;
+                        if (dh == 4'd2) begin  
+                            if (uh > 4'd3) begin
+                                us = 4'd0;
+                                ds = 4'd0;
+                                um = 4'd0;
+                                dm = 4'd0;
+                                uh = 4'd0;  
+                                dh = 4'd0;
+                            end
+                        end
+                    end
+                end
+            end
+        end
+
+        // Verifica se o dígito das dezenas de horas atingiu o limite máximo (24)
+        if (uh > 4'd9) begin
+            uh = 4'd0;
+            dh = dh + 4'd1;
+        end
+    end
+end
+
+    // Seis instâncias do módulo 'sevenseg' para converter os dígitos em segmentos
+    sevenseg display1 (
+        .sw(us),
+        .sevenseg(disp1)
+    );
+    sevenseg display2 (
+        .sw(ds),
+        .sevenseg(disp2)
+    );
+    sevenseg display3 (
+        .sw(um),
+        .sevenseg(disp3)
+    );
+    sevenseg display4 (
+        .sw(dm),
+        .sevenseg(disp4)
+    );
+    sevenseg display5 (
+        .sw(uh),
+        .sevenseg(disp5)
+    );
+    sevenseg display6 (
+        .sw(dh),
+        .sevenseg(disp6)
+    );
+
+endmodule

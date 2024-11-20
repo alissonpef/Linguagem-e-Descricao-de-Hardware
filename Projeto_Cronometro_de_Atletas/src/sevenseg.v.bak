@@ -1,0 +1,41 @@
+/*
+ * Módulo: sevenseg
+ * Descrição: Este módulo converte um número de 4 bits (0 a 9) em um valor correspondente
+ *            para ser exibido em um display de sete segmentos.
+ * Parâmetros de Entrada:
+ *   - sw [3:0]: Entrada de 4 bits representando o número a ser convertido.
+ * Parâmetros de Saída:
+ *   - sevenseg [6:0]: Saída de 7 bits representando os segmentos do display de sete segmentos.
+ * Comportamento: 
+ *   - O módulo utiliza uma estrutura case para mapear cada valor de entrada para os
+ *     segmentos correspondentes do display de sete segmentos.
+ *   - Cada caso representa um número decimal de 0 a 9, com atribuições específicas
+ *     para os segmentos apropriados.
+ *   - O caso 'default' é utilizado para atribuir um valor padrão (todos os segmentos acesos)
+ *     para entradas que não correspondem a nenhum dos casos especificados.
+ */
+
+module sevenseg (
+    input [3:0] sw,
+    output [6:0] sevenseg
+);
+
+    // Registrador de 7 bits para os segmentos do display de sete segmentos
+    reg [6:0] sevenseg;
+
+    // Bloco always que atualiza os segmentos com base na entrada sw
+    always @*
+        case (sw)
+            4'd0: sevenseg = 7'b1000000; // Representação do número 0
+            4'd1: sevenseg = 7'b1111001; // Representação do número 1
+            4'd2: sevenseg = 7'b0100100; // Representação do número 2
+            4'd3: sevenseg = 7'b0110000; // Representação do número 3
+            4'd4: sevenseg = 7'b0011001; // Representação do número 4
+            4'd5: sevenseg = 7'b0010010; // Representação do número 5
+            4'd6: sevenseg = 7'b0000010; // Representação do número 6
+            4'd7: sevenseg = 7'b1111000; // Representação do número 7
+            4'd8: sevenseg = 7'b0000000; // Representação do número 8
+            4'd9: sevenseg = 7'b0011000; // Representação do número 9
+            default: sevenseg = 7'b1111111; // Valor padrão para outros casos (todos os segmentos acesos)
+        endcase
+endmodule
